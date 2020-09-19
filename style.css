@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; }
+
+body {
+  font-size: 1.6rem;
+  font-family: 'Roboto Slab', serif;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  body.snow {
+    color: #24191c;
+    background-image: url("img/snow-bg.jpg"); }
+  body.palms {
+    color: #eac8da;
+    background-image: url("img/palms-bg.jpg"); }
+  body.christmas {
+    color: #fab43a;
+    background-image: url("img/christmas-bg.jpg");
+    text-shadow: 0 0 5rem #f1c271a6; }
+
+.event-title {
+  text-align: center;
+  font-size: clamp(3rem, 5vw, 5rem);
+  font-weight: 600;
+  margin: 6rem auto; }
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  font-size: 6rem;
+  max-width: 110rem;
+  width: 100%; }
+  .countdown__unit {
+    flex: 1;
+    text-align: center; }
+  .countdown__label {
+    font-size: 2rem; }
+
+.options {
+  padding: 1em;
+  position: absolute;
+  top: 0;
+  left: 0; }
+  .options i {
+    margin: 0 .5em;
+    font-size: 1em;
+    opacity: .5;
+    cursor: pointer;
+    transition: all 150ms ease; }
+    .options i:hover {
+      opacity: 1; }
