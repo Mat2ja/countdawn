@@ -4,12 +4,16 @@ const hoursEl = document.querySelector('#hours');
 const minutesEl = document.querySelector('#minutes');
 const secondsEl = document.querySelector('#seconds');
 const options = document.querySelectorAll('.options .option i');
+const modal = document.querySelector('.modal');
+const dateInput = modal.querySelector('#date-input');
+const nameInput = modal.querySelector('#name-input');
 
+let ourEvent = { date: '2020-10-20' };
 // let ourEvent = { date: '2020-12-10', name: 'My Birthday' };
 // let ourEvent = { date: '2022-12-25', name: 'Christmas 2022' }
 // let ourEvent = { year: 2022, name: 'Christmas' }
 // let ourEvent = { name: 'New Years Eve' }
-let ourEvent = { name: 'UEFA Euro 2021' }
+// let ourEvent = { name: 'UEFA Euro 2021' }
 
 startCountdown(ourEvent);
 window.intervalId = setInterval(() => startCountdown(ourEvent), 1000);
@@ -27,12 +31,22 @@ options.forEach(option => {
             case 'euro2021':
                 countdownEvent = { name: 'UEFA Euro 2021' }
                 break;
+            case 'custom':
+                modal.classList.toggle('show');
+                countdownEvent = getCustomEvent();
         }
         clearInterval(window.intervalId)
         startCountdown(countdownEvent);
         window.intervalId = setInterval(() => startCountdown(countdownEvent), 1000);
     })
 })
+
+function getCustomEvent() {
+    let countdownEvent = {};
+    dateInput.value = countdownEvent.date;
+    nameInput.value = countdownEvent.name;
+    return countdownEvent;
+}
 
 function startCountdown(event) {
     let currentDate = Date.now();
@@ -94,7 +108,7 @@ function showCountdown({ days, hours, minutes, seconds }, name) {
         document.body.classList.add('palms');
     }
 
-    eventEl.innerText = name;
+    eventEl.innerText = name || 'random thingamajig';
     daysEl.innerText = formatTime(days);
     hoursEl.innerText = formatTime(hours);
     minutesEl.innerText = formatTime(minutes);
