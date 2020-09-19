@@ -3,7 +3,7 @@ const daysEl = document.querySelector('#days');
 const hoursEl = document.querySelector('#hours');
 const minutesEl = document.querySelector('#minutes');
 const secondsEl = document.querySelector('#seconds');
-const options = document.querySelectorAll('.options .option');
+const options = document.querySelectorAll('.options .option i');
 
 // let ourEvent = { date: '2020-12-10', name: 'My Birthday' };
 // let ourEvent = { date: '2022-12-25', name: 'Christmas 2022' }
@@ -12,12 +12,11 @@ const options = document.querySelectorAll('.options .option');
 let ourEvent = { name: 'UEFA Euro 2021' }
 
 startCountdown(ourEvent);
-let intervalId = setInterval(() => startCountdown(ourEvent), 1000);
+window.intervalId = setInterval(() => startCountdown(ourEvent), 1000);
 
 options.forEach(option => {
     option.addEventListener('click', () => {
         let countdownEvent;
-        console.log(option.id);
         switch (option.id) {
             case 'christmas':
                 countdownEvent = { name: 'Christmas' }
@@ -29,9 +28,9 @@ options.forEach(option => {
                 countdownEvent = { name: 'UEFA Euro 2021' }
                 break;
         }
-        clearInterval(intervalId)
+        clearInterval(window.intervalId)
         startCountdown(countdownEvent);
-        intervalId = setInterval(() => startCountdown(countdownEvent), 1000);
+        window.intervalId = setInterval(() => startCountdown(countdownEvent), 1000);
     })
 })
 

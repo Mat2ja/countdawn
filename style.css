@@ -11,6 +11,10 @@ html {
   box-sizing: border-box;
   font-size: 62.5%; }
 
+h1,
+h2 {
+  line-height: 1; }
+
 body {
   font-size: 1.6rem;
   font-family: 'Roboto Slab', serif;
@@ -24,42 +28,63 @@ body {
   body.snow {
     color: #24191c;
     background-image: url("img/snow-bg.jpg"); }
+    body.snow ::selection {
+      background: transparent; }
   body.palms {
     color: #eac8da;
     background-image: url("img/palms-bg.jpg"); }
+    body.palms ::selection {
+      background: transparent; }
   body.christmas {
     color: #fab43a;
     background-image: url("img/christmas-bg.jpg");
-    text-shadow: 0 0 5rem #f1c271a6; }
+    text-shadow: 0 0 5rem rgba(241, 193, 111, 0.65); }
+    body.christmas ::selection {
+      background: rgba(241, 193, 111, 0.65);
+      color: #021615; }
 
 .event-title {
   text-align: center;
   font-size: clamp(3rem, 5vw, 5rem);
   font-weight: 600;
   margin: 6rem auto; }
+  @media (max-width: 750px) {
+    .event-title {
+      margin: 6rem auto 4rem; } }
 
 .countdown {
   display: flex;
   justify-content: center;
+  padding: 0 1.6rem;
   font-size: 6rem;
-  max-width: 110rem;
+  max-width: 100rem;
   width: 100%; }
   .countdown__unit {
     flex: 1;
     text-align: center; }
   .countdown__label {
-    font-size: 2rem; }
+    font-size: 2rem;
+    margin-top: 0.8rem; }
+  @media (max-width: 750px) {
+    .countdown {
+      flex-direction: column;
+      font-size: 5rem; }
+      .countdown__unit:not(:last-child) {
+        margin-bottom: 1.6rem; }
+      .countdown__label {
+        font-size: 1.6rem; } }
 
 .options {
-  padding: 1em;
   position: absolute;
+  padding: 0.8rem;
   top: 0;
-  left: 0; }
-  .options i {
-    margin: 0 .5em;
+  left: 0;
+  display: flex; }
+  .options .option {
     font-size: 1em;
-    opacity: .5;
+    opacity: 0.5;
     cursor: pointer;
-    transition: all 150ms ease; }
-    .options i:hover {
+    transition: all 250ms ease;
+    padding: 0.6em; }
+    .options .option:hover {
       opacity: 1; }
