@@ -47,10 +47,7 @@ body {
   text-align: center;
   font-size: clamp(3rem, 5vw, 5rem);
   font-weight: 600;
-  margin: 6rem auto; }
-  @media (max-width: 750px) {
-    .event-title {
-      margin: 6rem auto 4rem; } }
+  margin: 7rem auto; }
 
 .countdown {
   display: flex;
@@ -70,7 +67,7 @@ body {
       flex-direction: column;
       font-size: 5rem; }
       .countdown__unit:not(:last-child) {
-        margin-bottom: 1.6rem; }
+        margin-bottom: 2.4rem; }
       .countdown__label {
         font-size: 1.6rem; } }
 

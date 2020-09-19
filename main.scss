@@ -65,10 +65,9 @@ body {
 	text-align: center;
 	font-size: clamp(3rem, 5vw, 5rem);
 	font-weight: 600;
-	margin: 6rem auto;
+	margin: 7rem auto;
 
 	@media (max-width: 750px) {
-		margin: 6rem auto 4rem;
 	}
 }
 
@@ -96,7 +95,7 @@ body {
 		font-size: 5rem;
 
 		&__unit:not(:last-child) {
-			margin-bottom: 1.6rem;
+			margin-bottom: 2.4rem;
 		}
 
 		&__label {
