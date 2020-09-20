@@ -38,6 +38,9 @@ body {
 		::selection {
 			background: transparent;
 		}
+		#exit-icon {
+			color: white;
+		}
 	}
 
 	&.palms {
@@ -127,39 +130,99 @@ body {
 
 .modal {
 	position: absolute;
-	top: 8vh;
-	left: 50%;
-	max-width: 600px;
-	width: 90%;
-	height: 100px;
-	transform: translateX(-50%) scale(0.5);
-	transition: transform 300ms ease;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 
-	background: rgba(255, 255, 255, 0.4);
-	border-radius: 14px;
-	overflow: hidden;
+	background: rgba(255, 255, 255, 0.2);
 	backdrop-filter: blur(20px);
 	opacity: 0;
 	visibility: hidden;
+	z-index: 99;
 
-	form {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		height: 100%;
+	transition: all 300ms ease;
+
+	display: grid;
+	place-items: center;
+
+	&__form {
+		border-radius: 14px;
+		overflow: hidden;
+		position: relative;
+		background: white;
+		position: relative;
+		top: -5%;
+
+		display: grid;
+		grid-template-columns: 1fr;
+
+		gap: 1.6rem;
+		padding: 4em;
+		padding-bottom: 2.5em;
+
+		> * {
+			margin-bottom: 1rem;
+		}
+	}
+
+	&__exit {
+		position: absolute;
+		top: 0;
+		left: 0;
+		padding: 1rem 1.4rem;
+		border-bottom-right-radius: 6px;
+		cursor: pointer;
+		background: currentColor;
+
+		i {
+			color: #222;
+		}
 	}
 
 	.custom-input {
-		margin: 1.6rem 0;
 		border: none;
-        background: none;
-        border-bottom: 2px solid black;
+		background: none;
+		text-align: center;
+		font: inherit;
+		padding: 0.4em;
+		border: 3px solid #222;
+		border-radius: 6px;
+
+		&::placeholder {
+			color: inherit;
+		}
+
+		&:not(:placeholder-shown) {
+			color: black;
+		}
 	}
 
 	&.show {
-		transform: translateX(-50%) scale(1);
 		opacity: 1;
 		visibility: visible;
+	}
+
+	&__btn {
+		font: inherit;
+		background: #222;
+		color: white;
+
+		border: none;
+		padding: 0.6em 1.4em;
+
+		border-radius: 6px;
+		cursor: pointer;
+		text-transform: uppercase;
+		font-size: 0.85;
+
+		justify-self: center;
+
+		&:hover,
+		&:active,
+		&:focus {
+			background: black;
+			outline: none;
+		}
 	}
 }

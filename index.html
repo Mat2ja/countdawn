@@ -12,26 +12,30 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600;700&display=swap" rel="stylesheet">
     </head>
 
-    <body class="snow">
+    <body class="christmas">
         <div class="modal">
-            <form class="form">
+            <form class="modal__form">
+                <div class="modal__exit">
+                    <i class="fas fa-times" id="exit-icon"></i>
+                </div>
                 <input type="date" class="custom-input" id="date-input" required>
-                <input type="text" class="custom-input" id='name-input'>
+                <input type="text" class="custom-input" id='name-input' placeholder="Event Name" autocomplete="off" required>
+                <button type="submit" class="modal__btn">Confirm</button>
             </form>
 
         </div>
-        <div class="options" title='Christmas'>
-            <div class="option">
-                <i class="fas fa-sleigh" id='christmas'></i>
+        <div class="options">
+            <div class="option" title='Christmas' id='christmas'>
+                <i class="fas fa-sleigh"></i>
             </div>
-            <div class="option" title='New Years Eve'>
-                <i class="fas fa-glass-cheers" id='new-years'></i>
+            <div class="option" title='New Years Eve' id='new-years'>
+                <i class="fas fa-glass-cheers"></i>
             </div>
-            <div class="option" title='Euro 2021'>
-                <i class="far fa-futbol" id='euro2021'></i>
+            <div class="option" title='Euro 2021' id='euro2021'>
+                <i class="far fa-futbol"></i>
             </div>
-            <div class="option" title='Euro 2021'>
-                <i class="fas fa-edit" id='custom'></i>
+            <div class="option" title='Custom event' id='custom'>
+                <i class="fas fa-edit"></i>
             </div>
 
         </div>
