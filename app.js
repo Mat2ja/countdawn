@@ -11,11 +11,11 @@ const nameInput = modal.querySelector('#name-input');
 const modalExit = modal.querySelector('.modal__exit');
 
 // let ourEvent = { date: '2020-10-20' };
-let ourEvent = { date: '2020-12-10', name: 'My Birthday' };
+// let ourEvent = { date: '2020-12-10', name: 'My Birthday' };
 // let ourEvent = { date: '2022-12-25', name: 'Christmas 2022' }
 // let ourEvent = { year: 2022, name: 'Christmas' }
 // let ourEvent = { name: 'New Years Eve' }
-// let ourEvent = { name: 'UEFA Euro 2021' }
+let ourEvent = { name: 'UEFA Euro 2021' }
 
 startInterval(ourEvent);
 
