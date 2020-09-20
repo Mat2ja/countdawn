@@ -15,8 +15,8 @@ const modalExit = modal.querySelector('.modal__exit');
 // let ourEvent = { date: '2022-12-25', name: 'Christmas 2022' }
 // let ourEvent = { year: 2022, name: 'Christmas' }
 // let ourEvent = { name: 'New Years Eve' }
-let ourEvent = { name: 'UEFA Euro 2021' }
-
+// let ourEvent = { name: 'UEFA Euro 2021' }
+let ourEvent = { name: 'Summer' }
 startInterval(ourEvent);
 
 options.forEach(option => {
@@ -31,6 +31,9 @@ options.forEach(option => {
                 break;
             case 'euro2021':
                 countdownEvent = { name: 'UEFA Euro 2021' }
+                break;
+            case 'summer':
+                countdownEvent = { name: 'Summer' }
                 break;
             case 'custom':
                 modal.classList.add('show');
@@ -63,6 +66,7 @@ function getCustomEvent() {
 
 function startCountdown(event) {
     let currentDate = Date.now();
+    console.log(event);
     const { date, name } = recognizeEvent(event);
 
     let difference = date - currentDate;
@@ -86,6 +90,8 @@ function recognizeEvent({ date, name, year }) {
         parsedDate = Date.parse(`${year || currentYear}-12-25`);
     } else if (name === 'UEFA Euro 2021') {
         parsedDate = Date.parse(`2021-6-11`);
+    } else if (name === 'Summer') {
+        parsedDate = Date.parse('2021-6-21');
     } else {
         // ie '2023-12-10' (Dec 10th 2023)
         parsedDate = Date.parse(date);
@@ -115,8 +121,13 @@ function showCountdown({ days, hours, minutes, seconds }, name) {
         document.body.classList.add('christmas');
     } else if (name === 'UEFA Euro 2021') {
         document.body.className = '';
+        document.body.classList.add('football');
+    } else if (name === 'Summer') {
+        document.body.className = '';
         document.body.classList.add('palms');
     }
+
+    console.log(name, document.body.className);
 
     eventEl.innerText = name;
     daysEl.innerText = formatTime(days);

@@ -38,6 +38,9 @@ body {
     background-image: url("img/palms-bg.jpg"); }
     body.palms ::selection {
       background: transparent; }
+  body.football {
+    background-image: url("img/football-bg.jpg");
+    color: #e6ece6; }
   body.christmas {
     color: #fab43a;
     background-image: url("img/christmas-bg.jpg");
@@ -96,7 +99,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(20px);
   opacity: 0;
   visibility: hidden;
